@@ -7,6 +7,6 @@ spring:
     config:
       server:
         git:
-          default-label: master
-          uri: https://github.com/SimonSaezCorrea/Mingeso-Tingeso-Ayudantia
-          search-paths: "Unidad 2/Aplicación-microservicio-básico/config-data"
+          default-label: main
+          uri: https://github.com/h-hernan/2t-mingeso2
+          search-paths: config-data
