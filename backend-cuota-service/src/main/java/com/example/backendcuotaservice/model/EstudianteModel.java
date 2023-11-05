@@ -1,7 +1,7 @@
 package com.example.backendcuotaservice.model;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 @Data
