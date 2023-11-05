@@ -34,3 +34,7 @@ spring:
           uri: lb://backend-cuota-service
           predicates:
             - Path=/cuota/**
+        - id: backend-excel-service
+          uri: lb://backend-excel-service
+          predicates:
+            - Path=/excel/**
