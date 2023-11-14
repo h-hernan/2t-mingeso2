@@ -1,33 +1,25 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import ListaEstudiantesComponent from './components/ListaEstudiantesComponent';
+import InicioComponent from "./components/InicioComponent";
+import AgregarEstudianteComponent from "./components/AgregarEstudianteComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <h1 className="main-title">PREUNIVERSITARIO TOPEDUCATION</h1>
-        <p>Seleccione una opcion:</p>
-      </header>
-      <div className="button-container">
-        <button className="custom-button" onClick={() => handleButtonClick('/listar')}>
-          Estudiantes Registrados
-        </button>
-        <button className="custom-button" onClick={() => handleButtonClick('/formulario')}>
-          Agregar Alumno
-        </button>
-        <button className="custom-button" onClick={() => handleButtonClick('/cuotas/listar')}>
-          Listar Todas las cuotas
-        </button>
-        <button className="custom-button" onClick={() => handleButtonClick('/cuotas/formulario')}>
-          Listar Cuotas por RUT
-        </button>
-      </div>
+    <div>
+      <Router>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<InicioComponent />} />
+            <Route path="/estudiante" element={<ListaEstudiantesComponent />} />
+            <Route path="/formulario" element={<AgregarEstudianteComponent />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
-
-  function handleButtonClick(path) {
-    window.location.href = path; // Navega a la URL especificada al hacer clic en un botón
-  }
 }
 
 export default App;

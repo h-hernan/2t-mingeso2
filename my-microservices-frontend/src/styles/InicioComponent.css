@@ -1,10 +1,8 @@
-/* App.css */
-
-/* Estilos para el contenedor principal */
-.container {
+/* Estilos para el componente InicioComponent */
+.inicio-component {
   text-align: center;
   padding: 20px;
-  background-color: #47e94c; /* Cambia el color de fondo a verde (#47e94c) */
+  background-color: #47e94c;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,29 +10,14 @@
   justify-content: center;
 }
 
-/* Estilos para el encabezado */
-.header {
-  background-color: #0000ffe5;
-  color: #ffffff;
-  border: 2px solid #4319ed;
-  padding: 20px;
-  border-radius: 16px;
-  margin-bottom: 100px;
-}
-
-/* Estilos para el título principal */
+/* Estilos para el título principal en InicioComponent */
 .main-title {
   font-family: 'britannic bold', sans-serif;
   font-size: 36px;
   margin: 0;
 }
 
-/* Estilos para un subtítulo */
-.subtitle {
-  font-size: 20px;
-}
-
-/* Estilos para botones personalizados */
+/* Estilos para el botón personalizado en InicioComponent */
 .custom-button {
   background-color: #0000ffe5;
   color: #ffffff;

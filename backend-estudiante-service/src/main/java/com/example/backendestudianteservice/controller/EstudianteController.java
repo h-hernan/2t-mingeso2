@@ -17,17 +17,6 @@ public class EstudianteController {
 
     @PostMapping()
     public ResponseEntity<Estudiante> newEstudiante(@RequestBody Estudiante estudiante) {
-        /*
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate NewFechaNacimiento = LocalDate.parse(fecha_nacimiento, formato);
-        LocalDate NewAnioEgreso = LocalDate.parse(anio_egreso, formato);
-        System.out.println(rut + "  " + nombres + "  " + apellidos + "  " + fecha_nacimiento + "  " + tipo_colegio + "  " + nombre_colegio + "  " + anio_egreso);
-        int idTipoColegio = estudianteService.findIdByTipo(tipo_colegio);
-        LocalDate anio_ingreso = LocalDate.now();
-        EstudianteEntity estudianteEntity = new EstudianteEntity(rut, nombres, apellidos, NewFechaNacimiento, idTipoColegio, nombre_colegio, NewAnioEgreso, anio_ingreso);
-        estudianteService.save(estudianteEntity);
-        return ResponseEntity.ok(estudianteEntity);
-         */
         estudianteService.save(estudiante);
         return ResponseEntity.ok(estudiante);
     }
@@ -35,6 +24,8 @@ public class EstudianteController {
     @GetMapping("/")
     public ResponseEntity<List<Estudiante>> listar() {
         List<Estudiante> estudianteEntities = estudianteService.findAll();
+        if(estudianteEntities.isEmpty())
+            return ResponseEntity.noContent().build();
         return ResponseEntity.ok(estudianteEntities);
     }
 
